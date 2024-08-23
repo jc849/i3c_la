@@ -1,0 +1,29 @@
+i = 0
+
+; ------------------------------------------------------------------------------
+:LOOP
+; ------------------------------------------------------------------------------
+msg1 = '### try '
+msg2 = ''
+
+int2str msg2 i
+strconcat msg1 msg2
+
+sendln '##################'
+sendln msg1
+sendln '##################'
+
+
+sendln './fw-util.sh --version nic 1'
+wait '231.1.98.0'
+sendln './fw-util.sh --version nic 2'
+wait '231.1.98.0'
+sendln './fw-util.sh --version nic 3'
+wait '231.1.98.0'
+sendln './fw-util.sh --version nic 4'
+wait '231.1.98.0'
+
+
+i = i + 1
+
+goto LOOP
